@@ -1,2 +1,3 @@
-let apiKey = "ck_8d93acdb4d73030f7fd6d16b12a9b8e33f47e6e6";
+let apiKey =
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsIm5hbWUiOiJHbGVubiIsImlhdCI6MTY3MzcwODAyNywiZXhwIjoxODMxMzg4MDI3fQ.ZcTe1E1btHdpLs3ai1p30cHT4X4wdqKRMjqc3MqvLvI";
 export default apiKey;
