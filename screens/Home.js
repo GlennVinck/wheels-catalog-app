@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, FlatList, TextInput } from "react-native";
 
-import apiKey from "../apiKey";
 import WheelCard from "../components/WheelCards";
 
 const Home = ({ navigation }) => {
@@ -10,11 +9,12 @@ const Home = ({ navigation }) => {
     const getMoviesByRating = async () => {
         try {
             const response = await fetch(
-                "https://glennvinck.be/wp-json/wp/v2/product?per_page=50",
+                "https://glennvinck.be/wp-json/wc/v3/products",
                 {
                     method: "GET",
                     headers: {
-                        Authorization: apiKey,
+                        Authorization:
+                            "Basic Y2tfOGQ5M2FjZGI0ZDczMDMwZjdmZDZkMTZiMTJhOWI4ZTMzZjQ3ZTZlNjpjc19hNWM4ZjVlMDZmMzJiYmQ3MDIzNjZiNTU5ZTE0ODM2M2EzOTI4ZjQ1",
                     },
                 }
             );
@@ -35,7 +35,16 @@ const Home = ({ navigation }) => {
             <FlatList
                 data={movies}
                 renderItem={({ item }) => (
-                    <WheelCard id={item.id} title={item.title.rendered} />
+                    <WheelCard
+                        id={item.id}
+                        title={item.name}
+                        navigation={navigation}
+                        onSelectMovie={(selectedId) => {
+                            navigation.navigate("Details", {
+                                movieId: selectedId,
+                            });
+                        }}
+                    />
                 )}
             />
         </View>

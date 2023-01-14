@@ -1,20 +1,25 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import React, { useState, useEffect } from "react";
+import { StyleSheet, View, Button } from "react-native";
 
-function Details() {
+import WheelDetails from "../components/WheelDetails";
+
+const DetailsScreen = ({ route, navigation }) => {
+    const { movieId } = route.params;
+
     return (
-        <View style={styles.container}>
-            <Text>Details Screen</Text>
+        <View style={styles.screen}>
+            <WheelDetails movieId={movieId} />
+            <Button
+                title="Go to Movies"
+                onPress={() => navigation.navigate("Home")}
+            />
         </View>
     );
-}
-
+};
 const styles = StyleSheet.create({
-    container: {
+    screen: {
         flex: 1,
         justifyContent: "center",
-        alignItems: "center",
     },
 });
-
-export default Details;
+export default DetailsScreen;
