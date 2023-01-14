@@ -5,7 +5,7 @@ const WheelCard = (props) => {
     return (
         <TouchableOpacity
             activeOpacity={0.5}
-            onPress={() => props.onSelectMovie(props.id)}
+            onPress={() => props.onSelectWheel(props.id)}
         >
             <View style={styles.listItem}>
                 <Image

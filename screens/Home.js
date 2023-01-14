@@ -39,9 +39,9 @@ const Home = ({ navigation }) => {
                         id={item.id}
                         title={item.name}
                         navigation={navigation}
-                        onSelectMovie={(selectedId) => {
+                        onSelectWheel={(selectedId) => {
                             navigation.navigate("Details", {
-                                movieId: selectedId,
+                                wheelId: selectedId,
                             });
                         }}
                     />

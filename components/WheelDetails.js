@@ -8,7 +8,7 @@ const MovieDetails = (props) => {
         try {
             const url = encodeURI(
                 "https://glennvinck.be/wp-json/wc/v3/products/" +
-                    props.movieId +
+                    props.wheelId +
                     "/"
             );
             const response = await fetch(url, {

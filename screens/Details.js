@@ -4,11 +4,11 @@ import { StyleSheet, View, Button } from "react-native";
 import WheelDetails from "../components/WheelDetails";
 
 const DetailsScreen = ({ route, navigation }) => {
-    const { movieId } = route.params;
+    const { wheelId } = route.params;
 
     return (
         <View style={styles.screen}>
-            <WheelDetails movieId={movieId} />
+            <WheelDetails wheelId={wheelId} />
             <Button
                 title="Go to Movies"
                 onPress={() => navigation.navigate("Home")}
