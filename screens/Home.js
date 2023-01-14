@@ -4,9 +4,9 @@ import { StyleSheet, Text, View, FlatList, TextInput } from "react-native";
 import WheelCard from "../components/WheelCards";
 
 const Home = ({ navigation }) => {
-    const [movies, setMovies] = useState([]);
+    const [wheels, setWheels] = useState([]);
 
-    const getMoviesByRating = async () => {
+    const getWheelsCatalog = async () => {
         try {
             const response = await fetch(
                 "https://glennvinck.be/wp-json/wc/v3/products",
@@ -20,20 +20,20 @@ const Home = ({ navigation }) => {
             );
             const json = await response.json();
             console.log(json);
-            setMovies(json);
+            setWheels(json);
         } catch (error) {
             console.error(error);
         }
     };
 
     useEffect(() => {
-        getMoviesByRating();
+        getWheelsCatalog();
     }, []);
 
     return (
         <View>
             <FlatList
-                data={movies}
+                data={wheels}
                 renderItem={({ item }) => (
                     <WheelCard
                         id={item.id}
