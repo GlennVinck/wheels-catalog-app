@@ -16,6 +16,7 @@ const Cart = ({ navigation }) => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.topBar}>
                     <Backbutton />
+                    <Text style={styles.pagename}>Cart</Text>
                 </View>
             </ScrollView>
         </View>
@@ -24,13 +25,16 @@ const Cart = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     topBar: {
+        alignItems: "flex-end",
         width: "100%",
-        height: 80,
-        flex: 1,
         paddingHorizontal: 20,
+        marginTop: 10,
         flexDirection: "row",
-        justifyContent: "flex-start",
-        alignItems: "center",
+    },
+    pagename: {
+        marginLeft: 100,
+        fontSize: 24,
+        fontWeight: "600",
     },
 });
 export default Cart;
