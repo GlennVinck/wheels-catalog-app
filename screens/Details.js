@@ -9,64 +9,77 @@ const DetailsScreen = ({ route, navigation }) => {
 
     return (
         <View style={styles.screen}>
-            <View style={styles.topBar}>
-                <Backbutton />
+            <View>
+                <View style={styles.topBar}>
+                    <Backbutton />
+                </View>
+                <View>
+                    <WheelDetails wheelId={wheelId} />
+                </View>
             </View>
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <WheelDetails wheelId={wheelId} />
-            </ScrollView>
-            <Pressable style={styles.button1}>
-                <Text style={styles.text}>In winkelmandje</Text>
-            </Pressable>
-            <Pressable
-                style={styles.button2}
-                onPress={() => navigation.navigate("Home")}
-            >
-                <Text style={styles.text}>Annuleer</Text>
-            </Pressable>
+            <View>
+                <View style={styles.buttons}>
+                    <Pressable style={styles.button1}>
+                        <Text style={styles.text1}>In winkelmandje</Text>
+                    </Pressable>
+                    <Pressable
+                        style={styles.button2}
+                        onPress={() => navigation.navigate("Home")}
+                    >
+                        <Text style={styles.text2}>Annuleer</Text>
+                    </Pressable>
+                </View>
+            </View>
         </View>
     );
 };
 const styles = StyleSheet.create({
+    screen: {
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#ffffff",
+        paddingTop: 50,
+        flexDirection: "column",
+        justifyContent: "space-between",
+    },
     topBar: {
         flex: 1,
+        minHeight: 80,
         maxHeight: 80,
         justifyContent: "center",
         alignItems: "flex-start",
         paddingHorizontal: 16,
     },
-    screen: {
-        flex: 1,
-        justifyContent: "center",
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#ffffff",
-        paddingTop: 50,
+
+    buttons: {
+        position: "inherit",
     },
 
     button1: {
-        flex: 1,
+        height: 60,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "red",
+        backgroundColor: "#d72f39",
         margin: 10,
         marginBottom: 0,
-        borderRadius: 100,
-        maxHeight: 60,
+        borderRadius: 10,
     },
     button2: {
-        flex: 1,
+        height: 60,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "grey",
+        backgroundColor: "#eee",
         margin: 10,
         marginBottom: 40,
-        borderRadius: 100,
-        maxHeight: 60,
+        borderRadius: 10,
     },
-    text: {
+    text1: {
         fontSize: 24,
-        color: "white",
+        color: "#fff",
+    },
+    text2: {
+        fontSize: 24,
+        color: "#aaa",
     },
 });
 export default DetailsScreen;

@@ -9,12 +9,11 @@ const Backbutton = ({}) => {
 
     return (
         <View>
-            <TouchableOpacity style={styles.container}>
-                <Entypo
-                    name="chevron-left"
-                    style={styles.shoppingcart}
-                    onPress={() => navigation.navigate("Home")}
-                />
+            <TouchableOpacity
+                style={styles.container}
+                onPress={() => navigation.navigate("Home")}
+            >
+                <Entypo name="chevron-left" style={styles.shoppingcart} />
             </TouchableOpacity>
         </View>
     );
@@ -27,7 +26,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     shoppingcart: {
-        fontSize: 28,
+        fontSize: 24,
         color: "#aaa",
     },
 });

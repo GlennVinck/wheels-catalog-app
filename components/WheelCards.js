@@ -25,7 +25,9 @@ const WheelCard = (props) => {
                     <Text style={styles.title}>{props.title}</Text>
                     <Text style={styles.price}>{"€ " + props.price}</Text>
                 </View>
-                <Favouritebutton />
+                <View style={styles.favourite}>
+                    <Favouritebutton />
+                </View>
             </View>
         </TouchableOpacity>
     );
@@ -37,21 +39,25 @@ const styles = StyleSheet.create({
         marginVertical: 5,
         marginHorizontal: 10,
         borderRadius: 5,
-        alignItems: "center",
-        backgroundColor: "white",
+        alignItems: "flex-start",
         flexDirection: "row",
     },
 
     info: {
         flex: 1,
         flexDirection: "column",
+        justifyContent: "space-between",
+        marginTop: 16,
     },
 
     title: {
         fontWeight: "bold",
-        fontSize: 18,
+        fontSize: 16,
         textAlign: "flex-start",
-        marginBottom: 10,
+        marginBottom: 16,
+    },
+    favourite: {
+        marginTop: 16,
     },
 });
 

@@ -9,10 +9,10 @@ const SearchBar = () => {
                 <Feather
                     name="search"
                     size={20}
-                    color="black"
+                    color="#808080"
                     style={{ marginLeft: 1 }}
                 />
-                <TextInput style={styles.input} placeholder="Search" />
+                <TextInput style={styles.input} placeholder="Search wheels" />
             </View>
         </View>
     );
@@ -21,23 +21,23 @@ export default SearchBar;
 
 const styles = StyleSheet.create({
     container: {
-        margin: 15,
+        margin: 16,
         justifyContent: "flex-start",
         alignItems: "center",
         flexDirection: "row",
-        width: "90%",
+        width: "92%",
     },
     searchBar: {
-        padding: 10,
+        padding: 12,
         flexDirection: "row",
         width: "100%",
-        backgroundColor: "#d9dbda",
-        borderRadius: 15,
+        backgroundColor: "#eee",
+        borderRadius: 10,
         alignItems: "center",
         justifyContent: "space-evenly",
     },
     input: {
-        fontSize: 20,
+        fontSize: 16,
         marginLeft: 10,
         width: "90%",
     },

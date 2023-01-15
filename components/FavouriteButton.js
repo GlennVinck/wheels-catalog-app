@@ -12,7 +12,11 @@ const Favouritebutton = ({}) => {
                 style={styles.container}
                 onPress={() => setLiked((isLiked) => !isLiked)}
             >
-                <Entypo name="star" size={24} color={liked ? "red" : "white"} />
+                <Entypo
+                    name="star"
+                    size={24}
+                    color={liked ? "#f9a43c" : "white"}
+                />
             </Pressable>
         </View>
     );

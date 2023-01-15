@@ -9,12 +9,11 @@ const ShoppingCartIcon = ({}) => {
 
     return (
         <View>
-            <TouchableOpacity style={styles.container}>
-                <AntDesign
-                    name="shoppingcart"
-                    style={styles.shoppingcart}
-                    onPress={() => navigation.navigate("Cart")}
-                />
+            <TouchableOpacity
+                style={styles.container}
+                onPress={() => navigation.navigate("Cart")}
+            >
+                <AntDesign name="shoppingcart" style={styles.shoppingcart} />
             </TouchableOpacity>
         </View>
     );
@@ -27,7 +26,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     shoppingcart: {
-        fontSize: 28,
+        fontSize: 24,
         color: "#aaa",
     },
 });

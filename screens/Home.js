@@ -6,7 +6,6 @@ import apiKey from "../apiKey";
 import WheelCard from "../components/WheelCards";
 import SearchBar from "../components/SearchBar";
 import ShoppingCartIcon from "../components/ShoppingCart";
-import Favouritebutton from "../components/FavouriteButton";
 
 const Home = ({ navigation }) => {
     const [wheels, setWheels] = useState([]);
@@ -45,6 +44,7 @@ const Home = ({ navigation }) => {
         >
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.topBar}>
+                    <Text style={styles.pagename}>Victor Zehn Catalog</Text>
                     <ShoppingCartIcon />
                 </View>
                 <SearchBar />
@@ -78,6 +78,11 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "flex-end",
         alignItems: "center",
+    },
+    pagename: {
+        marginRight: "auto",
+        fontSize: 24,
+        fontWeight: "600",
     },
 });
 export default Home;
