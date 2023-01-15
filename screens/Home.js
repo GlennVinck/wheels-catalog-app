@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, FlatList, TextInput } from "react-native";
 
+import apiKey from "../apiKey";
+
 import WheelCard from "../components/WheelCards";
+import SearchBar from "../components/SearchBar";
 
 const Home = ({ navigation }) => {
     const [wheels, setWheels] = useState([]);
@@ -13,8 +16,7 @@ const Home = ({ navigation }) => {
                 {
                     method: "GET",
                     headers: {
-                        Authorization:
-                            "Basic Y2tfOGQ5M2FjZGI0ZDczMDMwZjdmZDZkMTZiMTJhOWI4ZTMzZjQ3ZTZlNjpjc19hNWM4ZjVlMDZmMzJiYmQ3MDIzNjZiNTU5ZTE0ODM2M2EzOTI4ZjQ1",
+                        Authorization: apiKey,
                     },
                 }
             );
@@ -32,12 +34,14 @@ const Home = ({ navigation }) => {
 
     return (
         <View>
+            <SearchBar />
             <FlatList
                 data={wheels}
                 renderItem={({ item }) => (
                     <WheelCard
                         id={item.id}
                         title={item.name}
+                        price={item.price}
                         navigation={navigation}
                         onSelectWheel={(selectedId) => {
                             navigation.navigate("Details", {

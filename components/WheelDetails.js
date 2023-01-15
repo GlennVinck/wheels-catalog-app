@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 
+import apiKey from "../apiKey";
+
 const MovieDetails = (props) => {
     const [movieDetails, setMovieDetails] = useState({});
 
@@ -14,8 +16,7 @@ const MovieDetails = (props) => {
             const response = await fetch(url, {
                 method: "GET",
                 headers: {
-                    Authorization:
-                        "Basic Y2tfOGQ5M2FjZGI0ZDczMDMwZjdmZDZkMTZiMTJhOWI4ZTMzZjQ3ZTZlNjpjc19hNWM4ZjVlMDZmMzJiYmQ3MDIzNjZiNTU5ZTE0ODM2M2EzOTI4ZjQ1",
+                    Authorization: apiKey,
                 },
             });
             const json = await response.json();

@@ -1,3 +1,3 @@
 let apiKey =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsIm5hbWUiOiJHbGVubiIsImlhdCI6MTY3MzcwODAyNywiZXhwIjoxODMxMzg4MDI3fQ.ZcTe1E1btHdpLs3ai1p30cHT4X4wdqKRMjqc3MqvLvI";
+    "Basic Y2tfOGQ5M2FjZGI0ZDczMDMwZjdmZDZkMTZiMTJhOWI4ZTMzZjQ3ZTZlNjpjc19hNWM4ZjVlMDZmMzJiYmQ3MDIzNjZiNTU5ZTE0ODM2M2EzOTI4ZjQ1";
 export default apiKey;
