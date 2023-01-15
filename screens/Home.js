@@ -42,11 +42,11 @@ const Home = ({ navigation }) => {
                 paddingTop: 50,
             }}
         >
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={styles.topBar}>
-                    <Text style={styles.pagename}>Victor Zehn Catalog</Text>
-                    <ShoppingCartIcon />
-                </View>
+            <View style={styles.topBar}>
+                <Text style={styles.pagename}>Victor Zehn Catalog</Text>
+                <ShoppingCartIcon />
+            </View>
+            <View showsVerticalScrollIndicator={false}>
                 <SearchBar />
                 <FlatList
                     data={wheels}
@@ -64,20 +64,18 @@ const Home = ({ navigation }) => {
                         />
                     )}
                 />
-            </ScrollView>
+            </View>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     topBar: {
+        alignItems: "flex-end",
         width: "100%",
-        height: 80,
-        flex: 1,
         paddingHorizontal: 20,
+        marginTop: 10,
         flexDirection: "row",
-        justifyContent: "flex-end",
-        alignItems: "center",
     },
     pagename: {
         marginRight: "auto",
