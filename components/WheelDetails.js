@@ -32,37 +32,66 @@ const WheelDetails = (props) => {
 
     return (
         <ScrollView>
-            <Image
-                style={styles.image}
-                source={{
-                    uri: "https://glennvinck.be/wp-content/uploads/2023/01/victor-zehn.7499.db_.7846.jpg",
-                }}
-            />
-            <Text style={styles.title}>{wheelDetails.name}</Text>
-            <View style={styles.details}>
-                <Text>{wheelDetails.name}</Text>
-                <Text style={styles.release}>
-                    release: {wheelDetails.release}
-                </Text>
+            <View style={styles.body}>
+                <View style={styles.title}>
+                    <Text style={styles.titlebrand}>
+                        {wheelDetails.type}&nbsp;
+                        {wheelDetails.type}
+                    </Text>
+                    <Text style={styles.titlespecs}>{wheelDetails.type}</Text>
+                </View>
+                <Image
+                    style={styles.image}
+                    source={{
+                        uri: "https://glennvinck.be/wp-content/uploads/2023/01/victor-zehn.7499.db_.7846.jpg",
+                    }}
+                />
+                <View style={styles.details}>
+                    <Text>
+                        Brand: {wheelDetails.name}&nbsp;
+                        {wheelDetails.name}
+                        Price: € {wheelDetails.price}
+                    </Text>
+                    <Text>Specifications</Text>
+                    <Text>Material: {wheelDetails.name}</Text>
+                </View>
             </View>
         </ScrollView>
     );
 };
 
 const styles = StyleSheet.create({
+    body: {
+        flex: 1,
+        width: "100%",
+        flexDirection: "column",
+        alignItems: "center",
+    },
+    image: {
+        width: 260,
+        height: 240,
+    },
     title: {
-        margin: 16,
-        fontSize: 24,
-        textAlign: "center",
+        width: "100%",
+        paddingHorizontal: 16,
+        paddingVertical: 8,
+        marginBottom: 8,
+    },
+    titlebrand: {
+        fontSize: 16,
+        fontWeight: "500",
+        color: "red",
+    },
+    titlespecs: {
+        fontSize: 20,
+        fontWeight: "600",
+        color: "black",
     },
     details: {
+        width: "100%",
         borderWidth: 1,
         padding: 16,
         margin: 8,
-    },
-    image: {
-        width: "100%",
-        height: 360,
     },
     release: {
         fontStyle: "italic",

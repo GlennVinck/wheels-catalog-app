@@ -29,13 +29,11 @@ const DetailsScreen = ({ route, navigation }) => {
 };
 const styles = StyleSheet.create({
     topBar: {
-        width: "100%",
-        minHeight: 40,
         flex: 1,
-        paddingHorizontal: 20,
-        flexDirection: "row",
-        justifyContent: "flex-start",
-        alignItems: "center",
+        maxHeight: 80,
+        justifyContent: "center",
+        alignItems: "flex-start",
+        paddingHorizontal: 16,
     },
     screen: {
         flex: 1,
