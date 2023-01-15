@@ -3,10 +3,10 @@ import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 
 import apiKey from "../apiKey";
 
-const MovieDetails = (props) => {
-    const [movieDetails, setMovieDetails] = useState({});
+const WheelDetails = (props) => {
+    const [wheelDetails, setWheelDetails] = useState({});
 
-    const getMovieDetailsById = async () => {
+    const getWheelDetailsById = async () => {
         try {
             const url = encodeURI(
                 "https://glennvinck.be/wp-json/wc/v3/products/" +
@@ -20,29 +20,29 @@ const MovieDetails = (props) => {
                 },
             });
             const json = await response.json();
-            setMovieDetails(json);
+            setWheelDetails(json);
         } catch (error) {
             console.error(error);
         }
     };
 
     useEffect(() => {
-        getMovieDetailsById();
+        getWheelDetailsById();
     }, []);
 
     return (
         <ScrollView>
             <Image
-                style={styles.filmPoster}
+                style={styles.image}
                 source={{
                     uri: "https://glennvinck.be/wp-content/uploads/2023/01/victor-zehn.7499.db_.7846.jpg",
                 }}
             />
-            <Text style={styles.title}>{movieDetails.name}</Text>
+            <Text style={styles.title}>{wheelDetails.name}</Text>
             <View style={styles.details}>
-                <Text>{movieDetails.name}</Text>
+                <Text>{wheelDetails.name}</Text>
                 <Text style={styles.release}>
-                    release: {movieDetails.release}
+                    release: {wheelDetails.release}
                 </Text>
             </View>
         </ScrollView>
@@ -60,9 +60,9 @@ const styles = StyleSheet.create({
         padding: 16,
         margin: 8,
     },
-    filmPoster: {
+    image: {
         width: "100%",
-        height: 300,
+        height: 360,
     },
     release: {
         fontStyle: "italic",
@@ -71,4 +71,4 @@ const styles = StyleSheet.create({
         textAlign: "right",
     },
 });
-export default MovieDetails;
+export default WheelDetails;

@@ -2,6 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Home from "./screens/Home";
+import Cart from "./screens/Cart";
 import Details from "./screens/Details";
 import ShoppingCartIcon from "./components/ShoppingCart";
 
@@ -12,16 +13,11 @@ export default function App() {
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions={{
-                    headerStyle: {
-                        backgroundColor: "orange",
-                    },
-                    headerTintColor: "#fff",
-                    headerTitleStyle: {
-                        fontWeight: "bold",
-                    },
+                    headerShown: false,
                 }}
             >
-                <Stack.Screen name="Catalog" component={Home} />
+                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="Cart" component={Cart} />
                 <Stack.Screen name="Details" component={Details} />
             </Stack.Navigator>
         </NavigationContainer>

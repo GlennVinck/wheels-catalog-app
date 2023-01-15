@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, FlatList, TextInput } from "react-native";
+import { StyleSheet, Text, View, FlatList, ScrollView } from "react-native";
 
 import apiKey from "../apiKey";
 
 import WheelCard from "../components/WheelCards";
 import SearchBar from "../components/SearchBar";
+import ShoppingCartIcon from "../components/ShoppingCart";
+import Favouritebutton from "../components/FavouriteButton";
 
 const Home = ({ navigation }) => {
     const [wheels, setWheels] = useState([]);
@@ -33,31 +35,49 @@ const Home = ({ navigation }) => {
     }, []);
 
     return (
-        <View>
-            <SearchBar />
-            <FlatList
-                data={wheels}
-                renderItem={({ item }) => (
-                    <WheelCard
-                        id={item.id}
-                        title={item.name}
-                        price={item.price}
-                        navigation={navigation}
-                        onSelectWheel={(selectedId) => {
-                            navigation.navigate("Details", {
-                                wheelId: selectedId,
-                            });
-                        }}
-                    />
-                )}
-            />
+        <View
+            style={{
+                width: "100%",
+                height: "100%",
+                backgroundColor: "#ffffff",
+                paddingTop: 50,
+            }}
+        >
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={styles.topBar}>
+                    <ShoppingCartIcon />
+                </View>
+                <SearchBar />
+                <FlatList
+                    data={wheels}
+                    renderItem={({ item }) => (
+                        <WheelCard
+                            id={item.id}
+                            title={item.name}
+                            price={item.price}
+                            navigation={navigation}
+                            onSelectWheel={(selectedId) => {
+                                navigation.navigate("Details", {
+                                    wheelId: selectedId,
+                                });
+                            }}
+                        />
+                    )}
+                />
+            </ScrollView>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    screen: {
-        padding: 50,
+    topBar: {
+        width: "100%",
+        height: 80,
+        flex: 1,
+        paddingHorizontal: 20,
+        flexDirection: "row",
+        justifyContent: "flex-end",
+        alignItems: "center",
     },
 });
 export default Home;

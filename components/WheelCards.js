@@ -1,6 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
+import Favouritebutton from "../components/FavouriteButton";
+
 const WheelCard = (props) => {
     return (
         <TouchableOpacity
@@ -23,6 +25,7 @@ const WheelCard = (props) => {
                     <Text style={styles.title}>{props.title}</Text>
                     <Text style={styles.price}>{"€ " + props.price}</Text>
                 </View>
+                <Favouritebutton />
             </View>
         </TouchableOpacity>
     );

@@ -2,18 +2,18 @@ import React from "react";
 import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import AntDesign from "react-native-vector-icons/AntDesign";
+import Entypo from "react-native-vector-icons/Entypo";
 
-const ShoppingCartIcon = ({}) => {
+const Backbutton = ({}) => {
     const navigation = useNavigation();
 
     return (
         <View>
             <TouchableOpacity style={styles.container}>
-                <AntDesign
-                    name="shoppingcart"
+                <Entypo
+                    name="chevron-left"
                     style={styles.shoppingcart}
-                    onPress={() => navigation.navigate("Cart")}
+                    onPress={() => navigation.navigate("Home")}
                 />
             </TouchableOpacity>
         </View>
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ShoppingCartIcon;
+export default Backbutton;

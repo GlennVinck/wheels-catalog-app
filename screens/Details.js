@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, Pressable, Text } from "react-native";
+import { StyleSheet, View, Pressable, Text, ScrollView } from "react-native";
 
 import WheelDetails from "../components/WheelDetails";
+import Backbutton from "../components/BackButton";
 
 const DetailsScreen = ({ route, navigation }) => {
     const { wheelId } = route.params;
 
     return (
         <View style={styles.screen}>
-            <WheelDetails wheelId={wheelId} />
-
+            <View style={styles.topBar}>
+                <Backbutton />
+            </View>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <WheelDetails wheelId={wheelId} />
+            </ScrollView>
             <Pressable style={styles.button1}>
                 <Text style={styles.text}>In winkelmandje</Text>
             </Pressable>
@@ -23,9 +28,22 @@ const DetailsScreen = ({ route, navigation }) => {
     );
 };
 const styles = StyleSheet.create({
+    topBar: {
+        width: "100%",
+        minHeight: 40,
+        flex: 1,
+        paddingHorizontal: 20,
+        flexDirection: "row",
+        justifyContent: "flex-start",
+        alignItems: "center",
+    },
     screen: {
         flex: 1,
         justifyContent: "center",
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#ffffff",
+        paddingTop: 50,
     },
 
     button1: {
